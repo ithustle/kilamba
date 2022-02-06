@@ -1,0 +1,149 @@
+<html>
+<head>
+<title>Projecto Novas Centralidades</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../style.css" type="text/css">
+
+<script type="text/javascript" language="javascript">
+            
+	// Variável que receberá o objeto XMLHttpRequest
+	var req;
+
+	function validarDados(campo, valor) {
+
+	// Verificar o Browser
+	// Firefox, Google Chrome, Safari e outros
+	if(window.XMLHttpRequest) {
+		req = new XMLHttpRequest();
+	}
+	// Internet Explorer
+	else if(window.ActiveXObject) {
+		req = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+
+	// Aqui vai o valor e o nome do campo que pediu a requisição.
+	var url = "validarRegisto.php?campo="+campo+"&valor="+valor;
+
+	// Chamada do método open para processar a requisição
+	req.open("get", url, true);
+
+	// Quando o objeto recebe o retorno, chamamos a seguinte função;
+	req.onreadystatechange = function() {
+
+			// Exibe a mensagem "Verificando" enquanto carrega
+			if(req.readyState == 1) {
+				document.getElementById('campo_' + campo + '').innerHTML = '<font color="gray">Verificando...</font>';
+			}
+
+			// Verifica se o Ajax realizou todas as operações corretamente (essencial)
+			if(req.readyState == 4 && req.status == 200) {
+			// Resposta retornada pelo validarRegisto.php
+			var resposta = req.responseText;
+
+				// Abaixo colocamos a resposta na div do campo que fez a requisição
+				document.getElementById('campo_'+ campo +'').innerHTML = resposta;
+			}
+
+	}
+
+		req.send(null);
+
+	}
+	
+	//Verifica se o registo do administrador está completo!
+   
+                    $(function($) {
+                        // Quando o formulário for enviado, essa função é chamada
+                        $("#cadastroform").submit(function() {
+                        // Colocamos os valores de cada campo em uma váriavel para facilitar a manipulação
+                        var nome = $("#nome").val();
+                        var user = $("#morada").val();
+                        var senha = $("#BI").val();
+                        var senhac = $("#NContrib").val();
+
+                        // Fazemos a requisão ajax com o arquivo envia.php e enviamos os valores de cada campo através do método POST
+                        $.get('registarAdmin.php', {Nome: nome, nUser: user, uSenha: senha, uSenhac: senhac}, function(resp) {
+                                // Se a resposta é um erro
+                                if (resp != false) {
+                                    // Exibe o erro na div
+                                    $("#erro").html(resp);
+                                    
+                                // Se resposta for false, ou seja, não ocorreu nenhum erro
+                                }else {
+                                    $("#erro").html(resp);
+                                    // Limpando todos os campos
+                                    $("#nome").val("");
+                                    $("#morada").val("");
+                                    $("#BI").val("");
+                                    $("#NContrib").val("");
+                                }
+                            });
+                        });
+                    });
+
+	
+</script>
+
+</head>
+
+<body>
+	<div id="container">
+	
+            <div id="logo"></div>
+	
+		<form id="cadastroform" class="rounded" method="GET" action="javascript:func()">
+		
+			<h3>Cadastramento do Pessoal Administrativo</h3>
+			<div id = "separador"></div>
+			
+			<p></p>
+			
+			<div class="campo">
+				<label for="nome">
+				<span class="obrigatorio"></span> Nome Completo:</label>
+				<input type="text" class="input" name="nome" id="nome" autocomplete="OFF" onblur="validarDados('nome', document.getElementById('nome').value);" />
+				<p class="info">Introduza o seu nome.</p><div class="msgErro" id="campo_nome"></div>
+			</div>
+			
+			<p></p>
+
+			<div class="campo">
+				<label for="Morada">
+				<span class="obrigatorio"></span> Nome de Utilizador:</label>
+				<input type="text" class="input" name="user" id="morada" autocomplete="OFF" onblur="validarDados('morada', document.getElementById('morada').value);" />
+				<p class="info">introduza um nome de utilizador.</p><div class="msgErro" id="campo_morada"></div>
+			</div>
+
+			<p></p>
+
+			<div class="campo">
+				<label for="BI"><span class="obrigatorio"></span>Senha:</label>
+				<input type="password" class="input" name="senha" id="BI" onblur="validarDados('BI', document.getElementById('BI').value);" />
+				<p class="info">Introduza a senha.</p><div class="msgErro" id="campo_BI"></div>
+			</div>
+
+			<p></p>
+
+			<div class="campo">
+				<label for="NContrib">
+				<span class="obrigatorio"></span> Confirmar senha:</label>
+				<input type="password" class="input" name="senhac" id="NContrib" onblur="validarDados('NContrib', document.getElementById('NContrib').value);" />
+				<p class="info">Confirme a senha.</p><div class="msgErro" id="campo_NContrib"></div>
+			</div>
+			
+			<p></p>
+			
+			<div style="border-bottom: 1px solid rgb(196, 196, 196);"></div>
+                            
+			<p></p>
+			
+			<input type="submit" name="enviar" class="botao" value="Cadastrar" />
+		</form>
+            
+		<div id="divRodape">
+                    Copyright © 2012 Trabalho de Monografia. Célio Garcia - Todos os direitos reservados.
+                </div>
+	</div>
+		
+</body>
+</html>

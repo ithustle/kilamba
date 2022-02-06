@@ -1,0 +1,2 @@
+ERRO: Fatal error: Call to a member function fetch() on a non-object 
+Como resolvi:  1. Corrigi a query sql; 2. A query retornava FALSE.

@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>Projecto Novas Centralidades ::: Área Administrativa ::: Login</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../style.css" type="text/css">
+
+</head>
+
+<body>
+	<div id="container">
+	
+            <div id="logo" style="margin-left:650px;"></div>
+	
+		<form id="Loginform" class="rounded" method="POST" action="../adminLogin.php" >
+		
+			<h3>Login de Acesso ao Sistema</h3>
+			<div id = "separador"></div>
+			
+			<p></p>
+			
+			<div class="campo">
+				<label for="nome">
+				<span class="obrigatorio"></span> Nome de Utilizador:</label>
+				<input type="text" class="input" name="txtUser" id="nome" autocomplete="OFF" />
+				<p class="info">Introduza o seu nome de utilizador.</p>
+			</div>
+			
+			<p></p>
+
+			<div class="campo">
+				<label for="Morada">
+				<span class="obrigatorio"></span> Senha:</label>
+				<input type="password" class="input" name="txtPass" id="Senha" autocomplete="OFF" />
+				<p class="info">Introduza a sua senha de acesso.</p>
+			</div>
+
+			<p></p>
+
+			<p></p>
+			
+			<div style="border-bottom: 1px solid rgb(196, 196, 196);"></div>
+			
+			<div id="Mensg">
+				<script>
+					var user = null;
+					var pass = null;
+					var vars = [], hash;
+					var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+					for(var i = 0; i < hashes.length; i++)
+					{
+						hash = hashes[i].split('=');
+						vars.push(hash[0]);
+						vars[hash[0]] = hash[1];
+
+					}
+
+					if (login = vars[vars]){
+						document.write("Nome de utilizador/Palavra-Passe incorrectas!");
+					}
+
+				</script></div>
+			
+			<input type="submit" name="enviar"  class="botao" value="Entrar"/>
+		</form>
+            
+		<div id="divRodape">
+                    Copyright © 2012 Trabalho de Monografia. Célio Garcia - Todos os direitos reservados.
+                </div>
+	</div>
+		
+</body>
+</html>

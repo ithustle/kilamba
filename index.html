@@ -1,0 +1,131 @@
+<html>
+<head>
+<title>Projecto Novas Centralidades</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="./style.css" type="text/css">
+
+</head>
+
+<body>
+	<div id="container">
+	
+            <div id="logo"></div><div id="admin"><a href="./admin/">Área Administrativa</a></div>
+	
+		<form id="cadastroform" class="rounded" method="POST" action="inscrever.php" enctype="multipart/form-data">
+		
+			<h3>Inscrição para Obtenção de uma Casa</h3>
+			<div id = "separador"></div>
+			
+			<p></p>
+			
+			<div class="campo">
+				<label for="nome">
+				<span class="obrigatorio">*</span> Nome Completo:</label>
+				<input type="text" class="input" name="nome" id="nome" autocomplete="OFF" />
+				<p class="info">Insira o seu nome.</p>
+			</div>
+			
+			<p></p>
+
+			<div class="campo">
+				<label for="Morada">
+				<span class="obrigatorio">*</span> Morada:</label>
+				<input type="text" class="input" name="morada" id="morada" autocomplete="OFF" />
+				<p class="info">Insira a sua morada.</p>
+			</div>
+
+			<p></p>
+
+			<div class="campo">
+				<label for="BI"><span class="obrigatorio">*</span> BI:</label>
+				<input type="text" class="input" name="bi" id="BI" />
+				<p class="info">Insira o seu número de BI.</p> 	 
+			</div>
+
+			<p></p>
+
+			<div class="campo">
+				<label for="NContrib">
+				<span class="obrigatorio">*</span> Nº Contribuinte:</label>
+				<input type="text" class="input" name="ncontr" id="NContrib" />
+				<p class="info">Insira o seu número de contribuinte.</p>
+			</div>
+
+			<p></p>
+
+			<div class="campo">
+				<label for="anexoBI">
+				<span class="obrigatorio">*</span> Cópia do BI:</label>
+				<input type="file" class="input" id="anexoBI" name="arquivo[]"/>
+				<p class="info">Selecione o anexo.</p>
+			</div>
+			
+			<p></p>
+
+			<div class="campo">
+				<label for="anexoBI">
+				<span class="obrigatorio">*</span> Cópia do Cartão de Contribuinte:</label>
+				<input type="file" class="input" id="anexoBI" name="arquivo[]"/>
+				<p class="info">Selecione o anexo.</p>
+			</div>
+			
+			<p></p>
+
+			<div class="campo">
+				<label for="anexoBI">
+				<span class="obrigatorio">*</span> Declaração de Serviço:</label>
+				<input type="file" class="input" id="anexoBI" name="arquivo[]"/>
+				<p class="info">Selecione o anexo.</p>
+			</div>
+			
+			<p></p>
+
+			<div class="campo">
+				<label for="anexoBI">
+				<span class="obrigatorio">*</span> Último recibo salarial:</label>
+				<input type="file" class="input" id="anexoBI" name="arquivo[]"/>
+				<p class="info">Selecione o anexo.</p>
+			</div>
+			
+			<p></p>
+
+			<div class="campo">
+				<label for="anexoBI">
+				<span class="obrigatorio">*</span> Cópia INSS:</label>
+				<input type="file" class="input" id="anexoBI" name="arquivo[]"/>
+				<p class="info">Selecione o anexo.</p>
+			</div>
+			
+			<p>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		 Os campos sinalizados com <span class="obrigatorio">*</span> são obrigatórios.</p>
+ 
+			<!--<div class="termos">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="checkbox" name="termos" id="termos" />Li e aceito os <a href="#">termos de utilização</a>.
+			</div>-->
+			<p></p>
+			
+			<div style="border-bottom: 1px solid rgb(196, 196, 196);"></div>
+                            
+			<p></p>
+			
+			<input type="submit" name="enviar"  class="botao" value="Enviar"/>
+		</form>
+            
+                    <div class="rounded" id="nota">Extensões de ficheiros permitidos: <br /><br />
+                        DOC (Microsoft Word 2003) <br />
+                        DOCX (Microsoft Word 2007/2010) <br /> 
+                        TXT (Documentos de texto)<br />
+                        PDF (Acrobat Reader)
+                    </div>
+            
+		<div id="divRodape">
+                    Copyright © 2012 Trabalho de Monografia. Célio Garcia - Todos os direitos reservados.
+                </div>
+	</div>
+		
+</body>
+</html>
